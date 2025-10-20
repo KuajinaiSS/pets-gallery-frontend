@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pets Gallery Frontend
 
-## Getting Started
+### Descripción
 
-First, run the development server:
+**Pets Gallery Frontend** es un proyecto diseñado para implementar un flujo de **autodespliegue (autodeploy)** mediante **Integración Continua y Despliegue Continuo (CI/CD)**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Cada vez que se realiza un **`git push` en la rama `main`**, se activa un **workflow en GitHub Actions**, el cual **construye una imagen Docker** de la aplicación y la **publica en DockerHub** utilizando un sistema de **etiquetado (tagging)** de versiones.
+
+Posteriormente, mediante un **webhook**, **DockerHub notifica a Render** sobre la nueva imagen disponible.  
+Render **descarga y despliega automáticamente** la última versión, asegurando así una **actualización continua y sin intervención manual** del proyecto.
+
+```mermaid
+flowchart LR
+    A[Dev] --"git push"--> B[main];
+    B --"trigger workflow"--> C[GitHub Actions];
+    C --"build & push"--> D[Build & Push Docker];
+    D --"upload image"--> E[Docker Hub];
+    E --"notify"--> F[Webhook];
+    F --"deploy hook"--> G[Render.com];
+    G --"auto deploy"--> H[Live Production];
+    
+    %% Configuraciones
+    I[GitHub Secrets] --"credentials"--> C;
+    J[Render Env Vars] --"environment config"--> G;
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Prerrequisitos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ - [Node.js 22.20.0](https://nodejs.org/en/download) o superior
+ - [pnpm](https://pnpm.io/installation) (recomendado) o npm
+ - [Git](https://pnpm.io/installation)
+ 
+### Instalación
+1. **Clonar el repositorio**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```powershell
+git clone https://github.com/KuajinaiSS/pets-gallery-frontend.git
+cd pets-gallery-frontend
+```
 
-## Learn More
+2. **Instalar dependencias con pnpm**
+```powershell
+pnpm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Ejecutar proyecto**
+```powershell
+pnpm dev
+```
+el proyecto se levantara en http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##### TODO:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ - [ ] Integrarlo con un backend con un flujo similar.
+ - [ ] revisar posibilidad de inicio de sesión.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
