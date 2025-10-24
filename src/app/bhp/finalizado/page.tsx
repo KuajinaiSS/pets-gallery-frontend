@@ -1,13 +1,17 @@
 import Link from "next/link";
+import { User, Flag, Timer, CheckCircle } from "lucide-react";
 
 export default function FinalizadoPage() {
     return (
         <div className="flex flex-col items-center justify-between min-h-screen bg-gray-800 text-white">
-            <header className="w-full bg-orange-600 flex justify-between items-center px-4 py-3 font-bold text-2xl">
+            <header className="w-full bg-orange-600 flex justify-between items-center px-4 py-3 text-white font-bold text-2xl">
                 <span>BHP</span>
-                <div className="bg-white text-orange-600 rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                    👤
-                </div>
+                <Link
+                    href="/"
+                    className="bg-white text-orange-600 rounded-full w-10 h-10 flex items-center justify-center hover:scale-105 transition-transform"
+                >
+                    <User className="w-6 h-6" />
+                </Link>
             </header>
 
             <main className="flex flex-col items-center justify-center text-center flex-grow">
@@ -21,18 +25,22 @@ export default function FinalizadoPage() {
             </main>
 
             <footer className="w-full bg-orange-600 flex justify-around py-2 text-white">
+
                 <div className="text-center opacity-60">
-                    <p>🏁</p>
+                    <Flag className="w-6 h-6 mx-auto" />
                     <p>Iniciar</p>
                 </div>
+
                 <div className="text-center opacity-60">
-                    <p>⏱️</p>
+                    <Timer className="w-6 h-6 mx-auto" />
                     <p>En progreso</p>
                 </div>
+
                 <div className="text-center">
-                    <p>✔️</p>
+                    <CheckCircle className="w-6 h-6 mx-auto" />
                     <p>Finalizado</p>
                 </div>
+
             </footer>
         </div>
     );

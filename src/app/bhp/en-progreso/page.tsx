@@ -1,14 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { User, Flag, Timer, CheckCircle } from "lucide-react";
+
+
 export default function EnProgresoPage() {
     return (
         <div className="flex flex-col items-center justify-between min-h-screen bg-white">
             <header className="w-full bg-orange-600 flex justify-between items-center px-4 py-3 text-white font-bold text-2xl">
                 <span>BHP</span>
-                <div className="bg-white text-orange-600 rounded-full w-8 h-8 flex items-center justify-center font-bold">
-                    👤
-                </div>
+                <Link
+                    href="/"
+                    className="bg-white text-orange-600 rounded-full w-10 h-10 flex items-center justify-center hover:scale-105 transition-transform"
+                >
+                    <User className="w-6 h-6" />
+                </Link>
             </header>
 
             <main className="flex flex-col items-center text-center p-4">
@@ -16,7 +22,7 @@ export default function EnProgresoPage() {
                 <h2 className="text-lg font-semibold">PLS S/N</h2>
                 <p className="text-lg font-medium mb-4">19-11-2025</p>
 
-                <div className="relative w-[400px] h-[250px]">
+                <div className="w-full flex justify-top mb-4">
                     <Image
                         src="/images/diagramaflujomantenimiento.png"
                         alt="Diagrama flujo mantenimiento"
@@ -27,7 +33,7 @@ export default function EnProgresoPage() {
                 </div>
 
                 <p className="text-lg font-semibold">Tiempo de Mantenimiento</p>
-                <p className="text-md mb-6">4 días: 29 minutos: 55 segundos</p>
+                <p className="text-md mb-6">3 días: 44 minutos: 55 segundos</p>
 
                 <p className="text-lg font-semibold">Porcentaje de llenado Total</p>
                 <p className="text-3xl font-bold mb-6">1%</p>
@@ -41,15 +47,15 @@ export default function EnProgresoPage() {
 
             <footer className="w-full bg-orange-600 flex justify-around py-2 text-white">
                 <div className="text-center opacity-60">
-                    <p>🏁</p>
+                    <Flag className="w-6 h-6 mx-auto" />
                     <p>Iniciar</p>
                 </div>
                 <div className="text-center">
-                    <p>⏱️</p>
+                    <Timer className="w-6 h-6 mx-auto" />
                     <p>En progreso</p>
                 </div>
                 <div className="text-center opacity-60">
-                    <p>✔️</p>
+                    <CheckCircle className="w-6 h-6 mx-auto" />
                     <p>Finalizado</p>
                 </div>
             </footer>
