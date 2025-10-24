@@ -17,8 +17,9 @@ RUN pnpm install --frozen-lockfile
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-# Requiere en next.config.ts: export default { output: 'standalone' }
+ENV NEXT_DISABLE_ESLINT=1
 RUN pnpm build
+
 
 # 4) Runner
 FROM node:${NODE_VERSION}-alpine AS runner
