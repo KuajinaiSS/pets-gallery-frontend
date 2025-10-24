@@ -1,38 +1,54 @@
+import Image from "next/image";
+
 export default function Page() {
   return (
     <div className="relative flex flex-col w-full min-h-screen overflow-x-hidden bg-[#0f1155]">
-      
-      {/* Foto superior del equipo */}
+
+      {/* === Foto superior del equipo === */}
       <div className="@container">
         <div className="@[500px]:px-4 @[500px]:py-3">
-          <div
-            className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-primary @[500px]:rounded-lg min-h-[218px]"
-            style={{
-              backgroundImage: 'url("/images/Team.png")',
-            }}
-          ></div>
+          <div className="w-full flex flex-col justify-end overflow-hidden bg-primary @[500px]:rounded-lg min-h-[218px] relative">
+            <Image
+              src="/images/Team.png"
+              alt="Foto del equipo"
+              fill
+              priority
+              className="object-cover rounded-lg opacity-90"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Título */}
-      <h1 className="text-white text-[32px] font-bold text-center pb-3 pt-6">Equipo 2</h1>
+      {/* === Título === */}
+      <h1 className="text-white text-[32px] font-bold text-center pb-3 pt-6">
+        Equipo 2
+      </h1>
 
-      {/* Cards del equipo */}
+      {/* === Cards del equipo === */}
       <div className="p-4 space-y-4">
         {/* === Card 1 === */}
-        <div className="flex flex-col gap-4 rounded-lg bg-primary p-4 shadow-md">
+        <div className="flex flex-col gap-4 rounded-lg bg-[#042b73] p-4 shadow-md">
           <div className="flex items-start gap-4">
-            <div
-              className="w-24 h-24 bg-center bg-cover rounded-lg flex-shrink-0"
-              style={{
-                backgroundImage: 'url("/images/Benjamin.jpg")'
-              }}
-            ></div>
+            <div className="relative w-24 h-24 flex-shrink-0">
+              <Image
+                src="/images/Benjamin.jpg"
+                alt="Benjamin Muga Contreras"
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <div className="flex flex-col flex-1 gap-1">
-              <p className="text-white text-base font-bold">Benjamin Muga Contreras</p>
+              <p className="text-white text-base font-bold">
+                Benjamin Muga Contreras
+              </p>
               <p className="text-gray-300 text-sm">Lead Developer</p>
             </div>
-            <a className="text-accent hover:text-orange-400" target="_blank" href="https://www.linkedin.com/in/benjaminmugacontreras">
+            <a
+              className="text-[#ed5a24] hover:text-orange-400"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/benjaminmugacontreras"
+            >
               <svg
                 aria-hidden="true"
                 className="w-6 h-6"
@@ -49,19 +65,28 @@ export default function Page() {
         </div>
 
         {/* === Card 2 === */}
-        <div className="flex flex-col gap-4 rounded-lg bg-primary p-4 shadow-md">
+        <div className="flex flex-col gap-4 rounded-lg bg-[#042b73] p-4 shadow-md">
           <div className="flex items-start gap-4">
-            <div
-              className="w-24 h-24 bg-center bg-cover rounded-lg flex-shrink-0"
-              style={{
-                backgroundImage: 'url("/images/Ignacio.jpg")'
-              }}
-            ></div>
+            <div className="relative w-24 h-24 flex-shrink-0">
+              <Image
+                src="/images/Ignacio.jpg"
+                alt="Ignacio Umaña Morel"
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <div className="flex flex-col flex-1 gap-1">
-              <p className="text-white text-base font-bold">Ignacio Umaña Morel</p>
+              <p className="text-white text-base font-bold">
+                Ignacio Umaña Morel
+              </p>
               <p className="text-gray-300 text-sm">Computer Science Major</p>
             </div>
-            <a className="text-accent hover:text-orange-400" target="_blank" href="https://www.linkedin.com/in/ignacio-felipe-umana-morel/">
+            <a
+              className="text-[#ed5a24] hover:text-orange-400"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/ignacio-felipe-umana-morel/"
+            >
               <svg
                 aria-hidden="true"
                 className="w-6 h-6"
@@ -78,19 +103,26 @@ export default function Page() {
         </div>
 
         {/* === Card 3 === */}
-        <div className="flex flex-col gap-4 rounded-lg bg-primary p-4 shadow-md">
+        <div className="flex flex-col gap-4 rounded-lg bg-[#042b73] p-4 shadow-md">
           <div className="flex items-start gap-4">
-            <div
-              className="w-24 h-24 bg-center bg-cover rounded-lg flex-shrink-0"
-              style={{
-                backgroundImage: 'url("/images/Ivan.jpg")'
-              }}
-            ></div>
+            <div className="relative w-24 h-24 flex-shrink-0">
+              <Image
+                src="/images/Ivan.jpg"
+                alt="Iván Martínez Godoy"
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <div className="flex flex-col flex-1 gap-1">
               <p className="text-white text-base font-bold">Iván Martínez Godoy</p>
               <p className="text-gray-300 text-sm">UX/UI Designer</p>
             </div>
-            <a className="text-accent hover:text-orange-400" target="_blank" href="https://www.linkedin.com/in/iván-martínez-g">
+            <a
+              className="text-[#ed5a24] hover:text-orange-400"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/iván-martínez-g"
+            >
               <svg
                 aria-hidden="true"
                 className="w-6 h-6"
@@ -107,19 +139,28 @@ export default function Page() {
         </div>
 
         {/* === Card 4 === */}
-        <div className="flex flex-col gap-4 rounded-lg bg-primary p-4 shadow-md">
+        <div className="flex flex-col gap-4 rounded-lg bg-[#042b73] p-4 shadow-md">
           <div className="flex items-start gap-4">
-            <div
-              className="w-24 h-24 bg-center bg-cover rounded-lg flex-shrink-0"
-              style={{
-                backgroundImage: 'url("/images/Valentina.jpg")'
-              }}
-            ></div>
+            <div className="relative w-24 h-24 flex-shrink-0">
+              <Image
+                src="/images/Valentina.jpg"
+                alt="Valentina Rojas Guerra"
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <div className="flex flex-col flex-1 gap-1">
-              <p className="text-white text-base font-bold">Valentina Rojas Guerra</p>
+              <p className="text-white text-base font-bold">
+                Valentina Rojas Guerra
+              </p>
               <p className="text-gray-300 text-sm">UX/UI Designer</p>
             </div>
-            <a className="text-accent hover:text-orange-400" target="_blank" href="https://www.linkedin.com/in/valentina-rojas-2784a8323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+            <a
+              className="text-[#ed5a24] hover:text-orange-400"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/valentina-rojas-2784a8323"
+            >
               <svg
                 aria-hidden="true"
                 className="w-6 h-6"
@@ -134,19 +175,14 @@ export default function Page() {
             A creative designer focused on crafting intuitive and beautiful user interfaces. Believes in user-centered design principles.
           </p>
         </div>
-
-
       </div>
 
-
-
-      {/* Footer */}
-      <footer className="bg-background-dark text-gray-300">
+      {/* === Footer === */}
+      <footer className="bg-[#0f1155] text-gray-300 mt-10">
         <div className="max-w-7xl mx-auto py-4 px-6 text-center">
           &copy; 2024 Equipo 2. Todos los derechos reservados.
         </div>
       </footer>
-
     </div>
   );
 }
